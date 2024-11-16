@@ -1,0 +1,20 @@
+<svg viewBox="0 0 909 1286" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+.g0_1{fill:#FFF;}
+.g1_1{fill:none;stroke:#000;stroke-width:1.527;stroke-linecap:round;stroke-miterlimit:10;}
+.g2_1{fill:none;stroke:#000;stroke-width:1.527;stroke-linejoin:round;}
+.g3_1{fill:#000;}
+</style>
+</defs>
+<path fill-rule="evenodd" d="M47.4 170h815V32.2H47.4V170Z" class="g0_1"/>
+<path d="M42.2 1235.3H865V35.7H42.2V1235.3Z" class="g1_1"/>
+<path d="M42.2 153.3H865" class="g2_1"/>
+<path fill-rule="evenodd" d="M600.9 196.7H852.1v-2.2H600.9v2.2Z" class="g3_1"/>
+<path fill-rule="evenodd" d="M758.2 224.2h92.4V222H758.2v2.2Z" class="g3_1"/>
+<path fill-rule="evenodd" d="M506.7 251.7H795.3v-2.2H506.7v2.2Z" class="g3_1"/>
+<path fill-rule="evenodd" d="M189.4 719.3H536.7v-2.2H189.4v2.2Z" class="g3_1"/>
+<path fill-rule="evenodd" d="M735 746.8h59.9v-2.2H735v2.2Z" class="g3_1"/>
+<path fill-rule="evenodd" d="M734.8 911.9h60.8v-2.2H734.8v2.2Z" class="g3_1"/>
+<image preserveAspectRatio="none" x="56" y="976" width="222" height="180" href="img/1.jpg"/>
+</svg>
