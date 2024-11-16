@@ -1,0 +1,17 @@
+<svg viewBox="0 0 909 1286" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+.g0_4{fill:none;stroke:#000;stroke-width:1.527;stroke-linecap:round;stroke-miterlimit:10;}
+.g1_4{fill:none;stroke:#000;stroke-width:1.527;stroke-linejoin:round;}
+.g2_4{fill:#000;}
+</style>
+</defs>
+<path d="M41.2 1233.6H864V34H41.2V1233.6Z" class="g0_4"/>
+<path d="M40.2 66.7H863" class="g1_4"/>
+<path fill-rule="evenodd" d="M753.1 100.5h97.7V98.3H753.1v2.2Z" class="g2_4"/>
+<path fill-rule="evenodd" d="M413.7 138.6H796.4v-2.2H413.7v2.2Z" class="g2_4"/>
+<path fill-rule="evenodd" d="M375 444.3H631.7v-2.2H375v2.2Z" class="g2_4"/>
+<path fill-rule="evenodd" d="M359.8 711.6H674.4v-2.2H359.8v2.2Z" class="g2_4"/>
+<path fill-rule="evenodd" d="M737.3 749.8h60v-2.2h-60v2.2Z" class="g2_4"/>
+<path fill-rule="evenodd" d="M733.5 979h63.6v-2.2H733.5V979Z" class="g2_4"/>
+</svg>
