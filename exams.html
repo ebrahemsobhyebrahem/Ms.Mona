@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- وصف الموقع لتحسين محركات البحث (SEO) -->
+    <meta name="description" content="موقع شامل لطلاب الثانوية العامة يقدم ملخصات لمادتي الاحياء والجيولوجيا بالإضافة إلى امتحانات الأعوام السابقة وحلولها." />
+
+    <!-- الكلمات المفتاحية لتحسين SEO -->
+    <meta name="keywords" content="الثانوية العامة, ملخصات دراسية, امتحانات سابقة, امتحانات الأعوام السابقة, ملخصات الثانوية, مراجعات دراسية" />
+
+    <!-- إعداد عرض للجوال لضمان توافق الموقع مع مختلف الأجهزة -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- اللغة الافتراضية للموقع -->
+    <meta http-equiv="Content-Language" content="ar" />
+    <title>الاختبارات</title>
+    <meta name="author" content="Ebrahem Sobhy">
+
+    <!-- ضمان التوافق مع متصفحات الويب القديمة -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- أيقونة الموقع التي تظهر في تبويب المتصفح -->
+    <link rel="icon" href="favicon.ico" />
+
+    <!-- تحسين محركات البحث عبر Open Graph -->
+    <meta property="og:title" content="ملخصات لمادتي الاحياء والجيولوجيا للثانوية العامة و امتحانات السنوات السابقة" />
+    <meta property="og:description" content="احصل على ملخصات لمادتي الاحياء والجيولوجيا للثانوية العامة بالإضافة إلى امتحانات سابقة لمساعدتك في المراجعة." />
+    <meta property="og:image" content="image-link.jpg" />
+    <meta property="og:url" content="image-link.jpg" />
+
+    <!-- تحسين العرض على تويتر عبر Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ملخصات الثانوية العامة و امتحانات السنوات السابقة" />
+    <meta name="twitter:description" content="مراجعة لمادتي الاحياء والجيولوجيا عبر ملخصات وامتحانات سابقة." />
+    <meta name="twitter:image" content="image-link.jpg" />
+    <!-- إعداد التخزين المؤقت لتحسين سرعة التحميل -->
+    <meta http-equiv="Cache-Control" content="max-age=31536000, public" />
+
+    <!-- تحسين أداء تحميل الخطوط والخدمات الخارجية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <!-- Font Awesome for social icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        /* إعدادات عامة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            height: 100%;
+            background: url('https://png.pngtree.com/thumb_back/fh260/background/20230411/pngtree-medical-biology-gene-blue-background-image_2198807.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow-y: auto;
+        }
+
+        /* طبقة داكنة فوق الخلفية */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        /* شريط التنقل */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-size: 32px;
+            font-weight: bold;
+            color: #00bfff;
+            text-transform: capitalize;
+            transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #fff;
+            text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+            transform: scale(1.1);
+        }
+
+        /* زر القائمة (همبرغر) */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background-color: rgba(0, 0, 0, 1);
+        }
+
+        .menu-toggle .bar {
+            width: 30px;
+            height: 3px;
+            background: #fff;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.open .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.open .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* قائمة التنقل */
+        .navbar-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-links li {
+            margin: 0 15px;
+        }
+
+        .navbar-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            color: #00bfff;
+        }
+
+        .navbar-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background: #00bfff;
+            transition: width 0.3s ease;
+        }
+
+        .navbar-links a:hover::after {
+            width: 100%;
+        }
+
+        /* القائمة عند الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+                border-radius: 5px;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .navbar-links.active {
+                display: flex;
+            }
+        }
+
+        /* عنوان الصفحة */
+.page-title {
+    text-align: center;
+    font-size: 48px; /* زيادة حجم الخط لجعل العنوان أكثر وضوحاً */
+    color: #00bfff; /* الحفاظ على اللون الذهبي الفاتح */
+    margin: 100px 0 20px 0; /* زيادة المسافة العلوية أكثر لتحريك العنوان للأسفل */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* زيادة عمق الظل لجعل العنوان بارزاً أكثر */
+    font-weight: bold; /* جعل الخط سميكاً لمزيد من الوضوح */
+}
+
+
+        /* الأقسام */
+        .section {
+            padding: 30px 20px;
+            text-align: center;
+            margin: 20px auto;
+            width: 90%;
+        }
+
+        .section-title {
+            font-size: 28px; /* حجم الخط المعدل */
+            margin-bottom: 20px;
+            color: #00bfff;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* تصميم الوحدات */
+        .rectangles-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            direction: rtl;
+            padding: 20px;
+            gap: 20px; /* زيادة التباعد لتأكيد فخامة الوحدات */
+        }
+.rectangle {
+    width: 180px;
+    height: 90px;
+    margin: 15px;
+    background-color: #1c1c1c; /* خلفية داكنة أنيقة */
+    border: 2px dashed #00bfff; /* إطار منقط بلون أزرق سماوي */
+    border-radius: 8px; /* زوايا ناعمة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px; /* حجم نص متوسط */
+    color: #ffffff; /* نص أبيض واضح */
+    font-weight: 500; /* وزن نص متوسط */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير سلس للتفاعل */
+    position: relative;
+    overflow: hidden; /* لإخفاء أي عناصر خارج الإطار */
+}
+
+.rectangle::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 191, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.rectangle:hover {
+    transform: scale(1.05); /* تكبير بسيط عند التمرير */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* ظلال عميقة */
+}
+
+.rectangle:hover::before {
+    opacity: 1; /* إظهار تأثير الإضاءة عند التمرير */
+}
+
+.rectangle p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #00bfff; /* لون أزرق سماوي للنص الداخلي */
+}
+
+/* تحسين استجابة الوحدات */
+@media (max-width: 768px) {
+    .rectangle {
+        width: 140px;
+        height: 70px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rectangle {
+        width: 110px;
+        height: 55px;
+        font-size: 14px;
+    }
+}
+
+
+
+        /* تحسين العرض على الشاشات الصغيرة */
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 28px; /* حجم الخط المعدل على الشاشات الصغيرة */
+            }
+
+            .section-title {
+                font-size: 24px; /* حجم الخط المعدل */
+            }
+
+            .navbar-brand {
+                font-size: 28px; /* حجم الخط المعدل */
+            }
+
+            .navbar-links a {
+                font-size: 16px; /* حجم الخط المعدل */
+            }
+        }
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.9);
+    border-top: 4px solid #00bfff;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 0;
+    color: #00bfff;
+    font-size: 18px;
+    line-height: 1.5;
+}
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="navbar-brand">Ms.Mona</div>
+        <div class="menu-toggle" id="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="navbar-links" id="navbar-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="concepts.html">المفاهيم</a></li>
+            <li><a href="exams.html">الاختبارات</a></li>
+            <li><a href="help.html">المساعدة</a></li>
+        </ul>
+    </nav>
+
+    <!-- عنوان الصفحة -->
+    <div class="page-title">مراجعات و اختبارات</div>
+
+    <!-- القسم الأول: الجبر والهندسة الفراغية -->
+    <div class="section" id="algebra-section">
+        <h2 class="section-title">مراجعة ليلة الإمتحان</h2>
+        <div class="rectangles-container">
+            <div class="rectangle" onclick="openBook('مراجعة-ليلة-الامتحان-فى-الأحياء-للثانوية-العامة-الجزء-الاول-2022.html')">الاحياء الجزء الاول</div>
+            <div class="rectangle" onclick="openBook('مراجعة-ليلة-الامتحان-فى-الأحياء-للثانوية-العامة-الجزء-الثاني2022/index.html')">الاحياء الجزء الثاني</div>
+            <div class="rectangle" onclick="openBook('مراجعة-ليلة-الامتحان-في-جيولوجيا-وعلوم-بيئية-ثالث-ثانوي-2022/index.html')">جيولوجيا</div>
+        </div>
+    </div>
+    <!-- القسم الثالث: امتحانات لحد 2020 -->
+    <div class="section" id="statics-section">
+        <h2 class="section-title">الامتحانات</h2>
+        <div class="rectangles-container">
+            <div class="rectangle" onclick="openBook('امتحان جيولوجيا-تجريبي.html')">جيولوجيا-تجريبي</div>
+            <div class="rectangle" onclick="openBook('امتحان الأحياء 2020/الأحياء-حركى.html')">الاحياء2020</div>
+            <div class="rectangle" onclick="openBook('امتحان احياء 2019/biolgy_hearing_weakness_guide_19.html')">الاحياء1 2019</div>
+            <div class="rectangle" onclick="openBook('امتحان احياء 2019.html')">الاحياء2 2019</div>
+            <div class="rectangle" onclick="openBook('امتحان1 احياء 2019.html')">الاحياء3 2019</div>
+            <div class="rectangle" onclick="openBook('امتحان جيولوجيا 2019.html')">جيولوجيا1 2019</div>
+            <div class="rectangle" onclick="openBook('امتحان1 جيولوجيا 2019.html')">جيولوجيا2 2019</div>
+            <div class="rectangle" onclick="openBook('امتحان احياء 2018.html')">الاحياء1 2018</div>
+            <div class="rectangle" onclick="openBook('امتحان احياء 2018/index.html')">الاحياء2 2018</div>
+            <div class="rectangle" onclick="openBook('امتحان جيولوجيا 2018.html')">جيولوجيا 2018</div>
+            <div class="rectangle" onclick="openBook('امتحان1 احياء 2017/index.html')">الاحياء1 2017</div>
+            <div class="rectangle" onclick="openBook('امتحان احياء 2017/index.html')">الاحياء2 2017</div>
+            <div class="rectangle" onclick="openBook('امتحان احياء 2016.html')">الاحياء 2016</div>
+        </div>
+    </div>
+
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <p>Copy Right 2024 © By Mona All Rights Reserved</p>
+    </footer>
+
+
+    <script>
+
+        // وظائف فتح الكتاب
+        function openBook(url) {
+            window.open(url, '_self'); // فتح الرابط داخل نفس النافذة
+        }
+
+        // قائمة التنقل
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarLinks = document.getElementById('navbar-links');
+
+        menuToggle.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
