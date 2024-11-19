@@ -1,0 +1,14 @@
+<svg viewBox="0 0 1466 825" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="c0_100"><path d="M-.2 825.3V-.2H1467V825.3Z"/></clipPath>
+<clipPath id="c1_100"><path d="M1343.9 529.1V456.4H1452v72.7Z"/></clipPath>
+<clipPath id="c2_100"><path d="M1346.3 621.3V549.7h102.9v71.6Z"/></clipPath>
+<clipPath id="c3_100"><path d="M1346.4 716.6V641.9h103v74.7Z"/></clipPath>
+<clipPath id="c4_100"><path d="M1353 825V744.6h96.2V825Z"/></clipPath>
+</defs>
+<image clip-path="url(#c0_100)" preserveAspectRatio="none" x="0" y="-7" width="1467" height="840" href="img/1.jpg"/>
+<image clip-path="url(#c1_100)" preserveAspectRatio="none" x="1344" y="457" width="108" height="72" href="img/2.jpg"/>
+<image clip-path="url(#c2_100)" preserveAspectRatio="none" x="1347" y="550" width="102" height="71" href="img/3.jpg"/>
+<image clip-path="url(#c3_100)" preserveAspectRatio="none" x="1347" y="642" width="102" height="74" href="img/4.jpg"/>
+<image clip-path="url(#c4_100)" preserveAspectRatio="none" x="1353" y="745" width="96" height="80" href="img/5.jpg"/>
+</svg>
